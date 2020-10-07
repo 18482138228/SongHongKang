@@ -43,14 +43,22 @@ public class CustomerList {
     }
 
     public Customer[] getAllCustomers() {
-
+        Customer[] cust = new Customer[total];
+        for (int i = 0; i < total; i++) {
+            cust[i] = customers[i];
+        }
+        return cust;
     }
 
     public Customer getCustomer(int index) {
-
+        if (index <= 0 || index > total) {
+            return null;
+        } else {
+            return customers[index];
+        }
     }
 
     public int getTotal() {
-
+        return total;
     }
 }
